@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google UI Clone</title>
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #202124;
+      --link-color: #5f6368;
+      --box-bg: #f8f9fa;
+    }
+
+    body.dark-mode {
+      --bg-color: #202124;
+      --text-color: #e8eaed;
+      --link-color: #9aa0a6;
+      --box-bg: #303134;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: space-between;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .header, .footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .header a, .footer a {
+      margin-left: 20px;
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 272px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 600px;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+      background-color: var(--box-bg);
+      transition: background-color 0.3s;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background-color: transparent;
+      color: var(--text-color);
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: var(--box-bg);
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-color);
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .buttons button:hover {
+      border: 1px solid #c6c6c6;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .toggle-dark {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      padding: 5px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .search-box {
+        padding: 8px 12px;
+      }
+
+      .logo {
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-dark" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <div class="header">
+    <a href="#">Gmail</a>
+    <a href="#">Images</a>
+  </div>
+
+  <div class="main">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" alt="Google Logo" class="logo">
+    <div class="search-box">
+      <input type="text" placeholder="Search Google or type a URL">
+    </div>
+    <div class="buttons">
+      <button>Google Search</button>
+      <button>I'm Feeling Lucky</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="#">About</a>
+    <a href="#">Advertising</a>
+    <a href="#">Business</a>
+    <a href="#">How Search works</a>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
